@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Centralised Data Access | CIT1142</title><link rel="stylesheet" href="/style.css"><script type="module" src="/app.js"></script></head>
+<body>
+<header class="site-header"><img class="university-logo" src="/zcas-logo.png" alt="ZCAS University logo" width="112" height="119"><div class="header-copy"><p class="eyebrow">Emerging Trends Assignment · Cybersecurity proof of concept demo</p><h1>Centralised Data Access and Leakage Prevention</h1><p>One place to manage who can release customer data, under what conditions, and with whose approval.</p></div></header>
+<main>
+<aside class="notice">Local demonstration · Demo  CRM data used · Controls only exports made through this application( there is no external database). It cannot stop screenshots or exports from other applications.</aside>
+<p id="message" role="status" aria-live="polite"></p>
+<section id="loginPanel"><h2>Sign in</h2><p>Copy a password from the server terminal. Each restart generates new demo passwords.</p>
+<form id="loginForm"><label>Account<select id="username"><option value="staff">Staff</option><option value="manager">Manager</option><option value="admin">IT admin</option></select></label><label>Password<input id="password" type="password" required autocomplete="current-password" maxlength="256"></label><button>Sign in</button></form></section>
+<div id="workspace" hidden>
+<div class="toolbar"><h2 id="identity"></h2><button id="refresh" class="secondary">Refresh</button><button id="logout" class="secondary">Sign out</button></div>
+<section><h2>Current export policy</h2><p id="policySummary"></p><p class="muted">Role and classification checks run on the server. A destination is a declared purpose; this demo downloads a CSV locally and does not send it anywhere.</p></section>
+<section><h2>Demo CRM customers</h2><p>Staff see masked email addresses. Sensitive emails are masked in the customer view for all roles.</p><div class="tablewrap"><table><thead><tr><th>Select</th><th>Customer</th><th>Email</th><th>Company</th><th>Classification</th></tr></thead><tbody id="customers"></tbody></table></div>
+<form id="exportForm"><label>Declared destination<select id="destination"><option value="internal">Internal reporting</option><option value="partner">Approved partner</option></select></label><label>Business purpose<input id="purpose" required minlength="5" maxlength="200" placeholder="Monthly customer report"></label><button>Request CSV export</button></form><p id="exportResult" role="status"></p></section>
+<section><h2>Export approval requests</h2><p>Requests expire after 10 minutes. Approved downloads are single use. Change the policy and all open approvals become invalid.</p><div id="requests"></div></section>
+<section id="adminPanel" hidden><h2>IT policy configuration</h2><p>Changes take effect immediately for all accounts.</p><form id="policyForm"><label><input type="checkbox" id="staffExport"> Allow staff exports (emails remain masked)</label><label><input type="checkbox" id="blockSensitive"> Block sensitive exports</label><label><input type="checkbox" id="allowPartner"> Allow partner requests (always require IT approval)</label><label>Maximum rows per export<input id="maxRows" type="number" min="1" max="8" required></label><label>Rows allowed without approval<input id="approvalThreshold" type="number" min="1" max="8" required></label><button>Save policy</button></form>
+<h2>Audit trail</h2><p>Most recent first; latest 500 events saved in audit-logs.json. No passwords or customer email values are logged.</p><div class="tablewrap"><table><thead><tr><th>Time</th><th>Actor</th><th>Action</th><th>Decision</th><th>Details</th></tr></thead><tbody id="audit"></tbody></table></div></section>
+</div>
+<section class="architecture"><h2>How the demonstration works</h2><div class="flow"><span>Staff / Manager</span><b>→</b><span>Authenticated request</span><b>→</b><span>Server policy check</span><b>→</b><span>Allow · Deny · IT approval</span></div><p>IT administrators configure shared rules and review the audit trail. The fictional CRM represents one application connected to a central governance layer.</p></section>
+</main><footer>example prototype created by Muzala Amoah · Policies and audit logs are saved locally.</footer>
+</body></html>

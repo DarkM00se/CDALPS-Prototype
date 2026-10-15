@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Jasper Banda",
+    "email": "jamaican@example.com",
+    "company": "Ba Jamaican Ltd",
+    "classification": "standard"
+  },
+  {
+    "id": 2,
+    "name": "Nguni Lexton ",
+    "email": "lex@hotmail195.com",
+    "company": "Black River Ltd",
+    "classification": "standard"
+  },
+  {
+    "id": 3,
+    "name": "Ashley Chiponde",
+    "email": "chipo@example.com",
+    "company": "Africa Seed Ltd",
+    "classification": "standard"
+  },
+  {
+    "id": 4,
+    "name": "Muzala Amoah",
+    "email": "muzala@example.co.zm",
+    "company": "Muzala Steel Ltd",
+    "classification": "standard"
+  },
+  {
+    "id": 5,
+    "name": "Elias Phiri",
+    "email": "elias@example.com",
+    "company": "Mwebeshi Copper Ltd",
+    "classification": "standard"
+  },
+  {
+    "id": 6,
+    "name": "Patricia Phiri",
+    "email": "patricia@example.com",
+    "company": "Lusaka Weaves",
+    "classification": "standard"
+  },
+  {
+    "id": 7,
+    "name": "Judah Samonga",
+    "email": "bajude@example.com",
+    "company": "Chicken Prince Ltd",
+    "classification": "sensitive"
+  },
+  {
+    "id": 8,
+    "name": "Hassan Muhammad",
+    "email": "hassan@example.co.zm",
+    "company": "Aamir Cotton",
+    "classification": "sensitive"
+  }
+]

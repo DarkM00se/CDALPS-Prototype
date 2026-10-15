@@ -1,0 +1,9 @@
+{
+  "name": "cit1142-centralised-data-security",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local educational centralised data access and leakage prevention demo",
+  "engines": { "node": ">=20" },
+  "scripts": { "start": "node server.js", "test": "node --test test/system.test.js" },
+  "dependencies": { "express": "^5.1.0" }
+}

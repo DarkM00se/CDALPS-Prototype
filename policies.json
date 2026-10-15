@@ -1,0 +1,8 @@
+{
+  "staffExport": false,
+  "maxRows": 6,
+  "approvalThreshold": 3,
+  "blockSensitive": true,
+  "allowPartner": false,
+  "version": 1
+}
